@@ -1,4 +1,6 @@
- low = 0
+class Solution:
+    def threeWayPartition(self, arr, a, b):
+        low = 0
         mid = 0
         high = len(arr) - 1
 
