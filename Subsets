@@ -1,0 +1,13 @@
+class Solution(object):
+    def subsets(self, nums):
+        result = []
+
+        def backtrack(start, path):
+            result.append(list(path))  # add current subset
+            for i in range(start, len(nums)):
+                path.append(nums[i])        # include nums[i]
+                backtrack(i + 1, path)     # move forward
+                path.pop()                 # backtrack
+
+        backtrack(0, [])
+        return result
